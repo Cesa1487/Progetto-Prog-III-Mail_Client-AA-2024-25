@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.universita.mailclient.controller.InboxController"
+            style="-fx-padding: 20;">
+
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10;">
+            <Button text="Nuovo Messaggio" onAction="#openNewMessage" prefWidth="150"/>
+            <Button text="Elimina" onAction="#handleDeleteEmail" prefWidth="150"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="connessioneLabel" text="Stato connessione: Sconosciuto" />
+        </HBox>
+    </top>
+
+    <center>
+        <ListView fx:id="emailListView" prefWidth="300" prefHeight="400"/>
+    </center>
+
+    <right>
+        <VBox spacing = "10" alignment="CENTER" style="-fx-padding: 10; -fx-border-color: lightgray; -fx-border-width: 0 0 0 1;">
+            <Button text="Inoltra" onAction="#handleForwardEmail" prefWidth="120"/>
+            <Button text="Rispondi" onAction="#handleReplyEmail" prefWidth="120"/>
+            <Button text="Rispondi a tutti" onAction="#handleReplyAll" prefWidth="120"/>
+        </VBox>
+    </right>
+
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 10;">
+            <Button text="Logout" onAction="#handleLogout"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
